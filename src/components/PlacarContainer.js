@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Time from './Time';
 import Partida from './Partida';
@@ -26,27 +27,32 @@ export default class PlacarContainer extends React.Component {
     }
 
     render() {
+        const { partida, casa, visitante } = this.props;
+
         return(
             <div className="placar-container">
                 <div className="time-casa">
                     <h3>Casa</h3>
                     <Time 
-                        nome={this.props.casa.nome} 
+                        // nome={this.props.casa.nome} 
+                        nome={casa.nome} 
                         gols={this.state.gols_casa}
                         marcarGol={this.marcarGolCasa.bind(this)}
                     />
                 </div>
                 <div className="partida">
-                    <Partida 
+                    {/* <Partida 
                         estadio={this.props.partida.estadio} 
                         data={this.props.partida.data} 
                         horario={this.props.partida.horario}
-                    />
+                    /> */}
+                    <Partida {...partida} clima={this.props.clima} tempo={this.props.tempo}/>
                 </div>
                 <div className="time-visitante">
                     <h3>Visitante</h3>
                     <Time 
-                        nome={this.props.visitante.nome} 
+                        // nome={this.props.visitante.nome} 
+                        nome={visitante.nome} 
                         gols={this.state.gols_visitante}
                         marcarGol={this.marcarGolVisitante.bind(this)}
                     />
@@ -56,3 +62,12 @@ export default class PlacarContainer extends React.Component {
         );
     }
 }
+
+PlacarContainer.propTypes = {
+    clima: PropTypes.string,
+    tempo: PropTypes.number.isRequired,
+};
+
+PlacarContainer.defaultProps = {
+    clima: 'Ensolarado',
+};
