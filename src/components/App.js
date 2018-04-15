@@ -21,17 +21,9 @@ const dados = {
 class App extends Component {
   render() {
     return (
-      // <div className="App">
-      //   <header className="App-header">
-      //     <img src={logo} className="App-logo" alt="logo" />
-      //     <h1 className="App-title">Welcome to React</h1>
-      //   </header>
-      //   <p className="App-intro">
-      //     To get started, edit <code>src/App.js</code> and save to reload.
-      //   </p>
-      // </div>
       <div>
-        <PlacarContainer partida={dados.partida} casa={dados.casa} visitante={dados.visitante} />
+        {/* <PlacarContainer partida={dados.partida} casa={dados.casa} visitante={dados.visitante} /> */}
+        <PlacarContainer {...dados} clima={'nublado'} tempo={85} />
       </div>
     );
   }

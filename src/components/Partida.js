@@ -10,6 +10,7 @@ export default class Partida extends React.Component {
                     <span>{this.props.data}</span>
                     <span> - </span>
                     <span>{this.props.horario}</span>
+                    <h4>Clima: {this.props.clima} - Tempo: {this.props.tempo}</h4>
                 </div>
             </div>
         );
