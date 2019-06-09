@@ -46,6 +46,7 @@ export default class PlacarContainer extends React.Component {
                         data={this.props.partida.data} 
                         horario={this.props.partida.horario}
                     /> */}
+                    {/* spread operator {... Exemplo} */}
                     <Partida {...partida} clima={this.props.clima} tempo={this.props.tempo}/>
                 </div>
                 <div className="time-visitante">
@@ -71,3 +72,8 @@ PlacarContainer.propTypes = {
 PlacarContainer.defaultProps = {
     clima: 'Ensolarado',
 };
+
+/**
+ * @see https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Operators/Spread_operator
+ * 
+ */
